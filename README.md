@@ -7,7 +7,7 @@ Steps to produce issue
 4. Test will do the following:\
     a. Check that a cell is present on the page (elementFinder.isPresent())\
     b. Open the Enterprise Column Menu\
-    c. Check that the same cell is present on the page (elementFinder.isPresent())\
+    c. Check that the same cell is present on the page (elementFinder.isPresent())
 5. Result: First check works, but after opening Column Menu and checking again, method call to check if a the element is present hangs.
 
 I print out some logs to try and debug:
