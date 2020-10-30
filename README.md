@@ -27,6 +27,8 @@ Notes:
 1. This issue also occurs when right clicking a cell to open ag-Grid's Context Menu (not set up in this sample project)
 2. This issue does NOT occur with the Community Column Filter
 
+# Everthing below is default README
+
 # AgGridApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
