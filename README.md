@@ -12,14 +12,14 @@ Steps to produce issue
 
 I print out some logs to try and debug:
 
-1.1 - Checking if we can find a cell
-1.2 - Is cell present: true
-1.3 - Check complete
-2.1 - Opening filter menu
-[15:16:11] W/element - more than one element found for locator By(css selector, .ag-cell-label-container) - the first result will be used
-[15:16:11] W/element - more than one element found for locator By(css selector, .ag-icon-menu) - the first result will be used
-2.2 - Opening filter menu complete
-3.1 - Checking if we can find same cell from 1.1
+1.1 - Checking if we can find a cell\
+1.2 - Is cell present: true\
+1.3 - Check complete\
+2.1 - Opening filter menu\
+[15:16:11] W/element - more than one element found for locator By(css selector, .ag-cell-label-container) - the first result will be used\
+[15:16:11] W/element - more than one element found for locator By(css selector, .ag-icon-menu) - the first result will be used\
+2.2 - Opening filter menu complete\
+3.1 - Checking if we can find same cell from 1.1\
 
 I expected logs 3.2 and 3.3 to print out
 
