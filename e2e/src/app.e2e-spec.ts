@@ -16,16 +16,20 @@ describe('workspace-project App', () => {
   describe('when clicking filter hamburger icon', () => {
     it('should open a menu', async function () {
       page.navigateTo();
-      const el = element(by.css('.ag-cell-label-container'));
+      const agGridCell = element(by.css('.ag-cell-label-container'));
       console.log('1.1 - Checking if we can find a cell');
-      console.log('1.2 - Is cell present: ' + await el.isPresent());
+      console.log('1.2 - Is cell present: ' + await agGridCell.isPresent());
       console.log('1.3 - Check complete');
       console.log('2.1 - Opening filter menu');
       await page.openFilter();
       console.log('2.2 - Opening filter menu complete');
-      console.log('3.1 - Checking if we can find same cell from 1.1');
-      console.log('3.2 - Is cell present: ' + await el.isPresent());
+      const autoSizeAllColumnsOption = element(by.cssContainingText('.ag-menu-option', 'Autosize All Columns'));
+      console.log('3.1 - Checking if we can find one of the options on the column menu (Autosize All Columns)');
+      console.log('3.2 - Is cell present: ' + await autoSizeAllColumnsOption.isPresent());
       console.log('3.3 - Check complete');
+      console.log('4.1 - Clicking on Autosize All Columns');
+      await autoSizeAllColumnsOption.click(); 
+      console.log('4.2 - Clicking complete');
     });
   });
 
