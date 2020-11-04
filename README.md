@@ -5,10 +5,11 @@ Steps to produce issue
 2. npm run e2e
 3. Only one e2e test will run in app.e2e-spec.ts
 4. Test will do the following:\
-    a. Check that a cell is present on the page (elementFinder.isPresent())\
+    a. Check that a cell is present on the page\
     b. Open the Enterprise Column Menu\
-    c. Check that the same cell is present on the page (elementFinder.isPresent())
-5. Result: First check works, but after opening Column Menu and checking again, method call to check if a the element is present hangs.
+    c. Check that the Autosize All Columns is present on the ColumnMenu\
+    d. Click on the Autosize All Columns on the Column Menu
+5. Result: First check works, but after opening Column Menu and checking again, method call to check if Autosize All columns is present hangs.
 
 I print out some logs to try and debug:
 
@@ -19,9 +20,9 @@ I print out some logs to try and debug:
 [15:16:11] W/element - more than one element found for locator By(css selector, .ag-cell-label-container) - the first result will be used\
 [15:16:11] W/element - more than one element found for locator By(css selector, .ag-icon-menu) - the first result will be used\
 2.2 - Opening filter menu complete\
-3.1 - Checking if we can find same cell from 1.1\
+3.1 - Checking if we can find one of the options on the column menu (Autosize All Columns)\
 
-I expected logs 3.2 and 3.3 to print out
+I expected logs 3.2, 3.3, 4.1, and 4.2 to print out
 
 Notes:
 1. This issue also occurs when right clicking a cell to open ag-Grid's Context Menu (not set up in this sample project)
