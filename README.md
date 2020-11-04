@@ -1,7 +1,7 @@
 # Notes for Support
 
 Steps to produce issue
-1. npm install (once only)
+1. npm install (depending on the branch there may be a different ag-Grid version)
 2. npm run e2e
 3. Only one e2e test will run in app.e2e-spec.ts
 4. Test will do the following:
