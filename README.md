@@ -1,32 +1,20 @@
 # Notes for Support
+In our application, when we navigate away from grid, we want to persist the grid's Column state so that, it can be used later for creating the grid as it was earlier.
+
+For achieving that, we were using getColumnState to get state and save it for future use.
+After upgrading to 24.1, state returned is always empty. 
+I also tested this same app using 23.2, it works without any issue. 
 
 Steps to produce issue
+
 1. npm install (depending on the branch there may be a different ag-Grid version)
-2. npm run e2e
-3. Only one e2e test will run in app.e2e-spec.ts
-4. Test will do the following:\
-    a. Check that a cell is present on the page\
-    b. Open the Enterprise Column Menu\
-    c. Check that the Autosize All Columns is present on the ColumnMenu\
-    d. Click on the Autosize All Columns on the Column Menu
-5. Result: First check works, but after opening Column Menu and checking again, method call to check if Autosize All columns is present hangs.
+2. npm run start
+3. Click on Dashboard button to load the Grid
+4. Click on Snapshot button
+5. It will trigger ngOnDestroy method in Dashboard component
+5. Check columnState in ngOnDestroy method in Dashboard component
 
-I print out some logs to try and debug:
-
-1.1 - Checking if we can find a cell\
-1.2 - Is cell present: true\
-1.3 - Check complete\
-2.1 - Opening filter menu\
-[15:16:11] W/element - more than one element found for locator By(css selector, .ag-cell-label-container) - the first result will be used\
-[15:16:11] W/element - more than one element found for locator By(css selector, .ag-icon-menu) - the first result will be used\
-2.2 - Opening filter menu complete\
-3.1 - Checking if we can find one of the options on the column menu (Autosize All Columns)\
-
-I expected logs 3.2, 3.3, 4.1, and 4.2 to print out
-
-Notes:
-1. This issue also occurs when right clicking a cell to open ag-Grid's Context Menu (not set up in this sample project)
-2. This issue does NOT occur with the Community Column Filter
+#ag-grid 24.1 version returns empty column state whereas 23.2 version was returning the existing grid column state.
 
 # Everthing below is default README
 
